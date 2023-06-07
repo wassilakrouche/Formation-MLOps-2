@@ -24,9 +24,9 @@ jobs:
           flake8 formation_indus_ds_avancee/
       - name: Run Vulture
         run: |
-          vulture
+          vulture formation_indus_ds_avancee/
       - name: Run tests
         run: |
-          pytest
+          pytest formation_indus_ds_avancee/
 
 
