@@ -21,10 +21,12 @@ jobs:
         run:  pip install -r requirements_test.txt
       - name: Run Linter
         run: | 
-          flake8 .
+          flake8
       - name: Run Vulture
-        run: echo "Trainee should add command to run vulture"
+        run: |
+          vulture
       - name: Run tests
-        run: echo "Trainee should add command to run test"
+        run: |
+          pytest
 
 
