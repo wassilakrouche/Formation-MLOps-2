@@ -33,7 +33,6 @@ def prepare_features(data: pd.DataFrame, training_mode: bool = True) -> pd.DataF
 
 
 def create_date_features(data_frame: pd.DataFrame) -> pd.DataFrame:
-    print(data_frame)
     data_frame['date'] = pd.to_datetime(data_frame.Date_time, utc=True)
     data_frame['year'] = data_frame['date'].dt.year
     data_frame['month'] = data_frame['date'].dt.month

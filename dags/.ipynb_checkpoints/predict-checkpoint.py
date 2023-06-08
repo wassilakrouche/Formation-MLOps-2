@@ -13,7 +13,7 @@ from formation_indus_ds_avancee.train_and_predict import predict_with_io
 
 
 
-@dag(default_args={'owner': 'airflow'}, schedule=timedelta(minutes=20),
+@dag(default_args={'owner': 'airflow'}, schedule=timedelta(minutes=2),
      start_date=pendulum.today('UTC').add(hours=-1))
 def predict():
     @task

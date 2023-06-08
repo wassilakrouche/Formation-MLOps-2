@@ -11,7 +11,7 @@ from dags.config import TRAIN_DATA_PATH, GENERATED_DATA_FOLDER
 from formation_indus_ds_avancee.data_loading import get_data_from_csv
 
 
-@dag(default_args={'owner': 'airflow'}, schedule=timedelta(minutes=20),
+@dag(default_args={'owner': 'airflow'}, schedule=timedelta(minutes=2),
      start_date=pendulum.today('UTC').add(hours=-1))
 def data_generator():
     @task
