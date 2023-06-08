@@ -11,9 +11,7 @@ from dags.config import TRAIN_DATA_PATH, MODEL_REGISTRY_FOLDER, DATA_FOLDER
 from formation_indus_ds_avancee.feature_engineering import prepare_features_with_io
 from formation_indus_ds_avancee.train_and_predict import train_model_with_io
 
-from sqlalchemy_utils.types.enriched_datetime.pendulum_date import pendulum
-
-@dag(default_args={'owner': 'airflow'}, schedule_interval=timedelta(weeks=4), start_date=pendulum.today('UTC').add(hours=-1))
+@dag(default_args={'owner': 'airflow'}, schedule_interval=timedelta(weeks=4), start_date=days_ago(1))
 def train_model():
     @task
     def prepare_features_task() -> str:
